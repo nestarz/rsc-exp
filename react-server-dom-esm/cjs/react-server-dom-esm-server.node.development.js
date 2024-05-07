@@ -325,6 +325,7 @@ function resolveClientReferenceMetadata(config, clientReference) {
   var fullURL = id.slice(0, idx);
 
   if (!fullURL.startsWith(baseURL)) {
+    console.error(fullURL, baseURL);
     throw new Error(
       "Attempted to load a Client Module outside the hosted root.",
     );

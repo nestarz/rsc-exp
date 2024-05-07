@@ -14,12 +14,12 @@
     "@types/react": "npm:types-react@alpha",
     "@types/react-dom": "npm:types-react-dom@alpha",
     "acorn-loose": "npm:acorn-loose@^8.4.0",
-    "react": "npm:react@beta",
-    "react-dom": "npm:react-dom@beta",
-    "react-dom/": "npm:/react-dom@beta/",
+    "react": "npm:react@19.0.0-beta-b498834eab-20240506",
+    "react-dom": "npm:react-dom@19.0.0-beta-b498834eab-20240506",
+    "react-dom/": "npm:/react-dom@19.0.0-beta-b498834eab-20240506/",
     "react-server-dom-esm/node-loader": "./react-server-dom-esm/react-server-dom-esm-node-loader.production.js",
     "react-server-dom-esm/server.node": "./react-server-dom-esm/cjs/react-server-dom-esm-server.node.development.js",
-    "react-server-dom-webpack/client.browser": "./react-server-dom-esm/react-server-dom-esm-client.browser.development.js",
-    "react/": "npm:/react@beta/"
+    "react-server-dom-esm/client.browser": "./react-server-dom-esm/react-server-dom-esm-client.browser.development.js",
+    "react/": "npm:/react@19.0.0-beta-b498834eab-20240506/"
   }
 }

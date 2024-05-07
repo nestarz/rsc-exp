@@ -13,6 +13,19 @@ export function renderToReadableStream(
   return Readable.toWeb(jsxStream) as ReadableStream;
 }
 
+export const log = (response: ReadableStream) => {
+  const [response1, response2] = response.tee();
+  const reader = response2.getReader();
+  const Decoder = new TextDecoder();
+  async function readHtml() {
+    const { done, value } = await reader.read();
+    console.log(Decoder.decode(value));
+    if (!done) readHtml();
+  }
+  readHtml();
+  return response1;
+};
+
 export const renderToResponse = (model: JSX.Element) => {
   const moduleBasePath = toFileUrl(join(Deno.cwd(), "src")).href;
   const options = {
@@ -35,9 +48,15 @@ const result = await esbuild.build({
       importMapURL: toFileUrl(join(Deno.cwd(), "./deno.json")).href,
     }),
   ],
-  entryPoints: [toFileUrl(join(Deno.cwd(), "./client.tsx")).href],
-  outfile: "./dist/bytes.esm.js",
+  entryPoints: [
+    toFileUrl(join(Deno.cwd(), "./client.tsx")).href,
+    toFileUrl(join(Deno.cwd(), "./app/components/Counter.tsx")).href,
+  ],
+  outdir: "./dist/",
   bundle: true,
+  splitting: true,
+  metafile: true,
+  treeShaking: true,
   format: "esm",
   jsx: "automatic",
 });

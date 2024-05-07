@@ -1,25 +1,15 @@
-import { Suspense } from "react";
-import { createRoot } from "react-dom/client";
-import { createFromFetch } from "react-server-dom-webpack/client.browser";
+import { createFromReadableStream } from "react-server-dom-esm/client.browser";
+import { ReactElement, Usable, use } from "react";
+import ReactDOM from "react-dom/client";
+import { rscStream } from "npm:rsc-html-stream/client";
 
-let rsc = null;
-function App() {
-  if (!rsc) {
-    rsc = createFromFetch(
-      fetch("/app", {
-        headers: {
-          Accept: "text/x-component",
-        },
-      })
-    );
-  }
+let data: Usable<ReactElement>;
+const Content = ({ stream }: { stream: ReadableStream }) => {
+  data ??= createFromReadableStream(stream, { callServer: console.log });
+  return use(data);
+};
 
-  return rsc;
-}
-
-const root = createRoot(document.getElementById("root"));
-root.render(
-  <Suspense fallback="Loading...">
-    <App />
-  </Suspense>
+ReactDOM.hydrateRoot(
+  document.body,
+  <Content stream={rscStream} />,
 );
