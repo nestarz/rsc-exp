@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { Counter } from "./components/Counter.tsx";
+import { Counter2 } from "./components/Counter2.tsx";
 
 async function delay(ms: number) {
   return await new Promise((resolve) => setTimeout(resolve, ms));
@@ -11,6 +12,7 @@ const AsyncC = async () => {
     <>
       <h1>AsyncC!2</h1>
       {new Date().toISOString()}
+      <Counter2 />
     </>
   );
 };

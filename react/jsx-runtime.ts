@@ -2,19 +2,21 @@
 import * as JSX from "react/jsx-runtime";
 import { fromFileUrl } from "jsr:@std/path@0.225.0/posix/from-file-url";
 import entrypoints from "../entrypoints.json" with { type: "json" };
+import { join } from "jsr:@std/path@0.225.0/join";
+import { toFileUrl } from "jsr:@std/path@0.225.0/to-file-url";
 
 let modules: any[];
 setTimeout(async () => {
-  function reverseMap<K extends string, V>(obj: Record<K, V>): Map<V, K> {
-    return new Map(Object.entries(obj).map(([key, value]) => [value, key]));
-  }
+  const reverseMap = <K extends string | number | symbol, V>(
+    obj: Record<K, V>,
+  ): Map<V, K> =>
+    new Map(Object.entries(obj).map(([key, value]) => [value, key])) as any;
   modules = await Promise.all(
-    entrypoints.map(async (specifier) => ({
-      specifier,
-      module: reverseMap(
-        await import(specifier),
-      ),
-    })),
+    entrypoints.map((specifier) => toFileUrl(join(Deno.cwd(), specifier))).map(
+      async (
+        specifier,
+      ) => ({ specifier, module: reverseMap(await import(specifier.href)) }),
+    ),
   );
 });
 

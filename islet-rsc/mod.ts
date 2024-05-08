@@ -69,7 +69,9 @@ const entryPoints = modules.filter((v) => v.mode === "client").map((v) =>
   v.module.specifier
 );
 
-const value = JSON.stringify(entryPoints);
+const value = JSON.stringify(
+  entryPoints.map((v) => v.replace(toFileUrl(Deno.cwd()), "")),
+);
 const previous = await Deno.readTextFile("./entrypoints.json");
 if (previous !== value) await Deno.writeTextFile("./entrypoints.json", value);
 
