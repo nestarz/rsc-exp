@@ -2,8 +2,11 @@
   "version": "3",
   "packages": {
     "specifiers": {
+      "jsr:@bureaudouble-forks/esbuild-deno-loader@0.10.3+nestarz.quiet.0.0.3": "jsr:@bureaudouble-forks/esbuild-deno-loader@0.10.3+pr0.0.4",
+      "jsr:@bureaudouble/rsc-engine@0.0.13": "jsr:@bureaudouble/rsc-engine@0.0.13",
       "jsr:@bureaudouble/scripted": "jsr:@bureaudouble/scripted@0.0.2",
       "jsr:@fartlabs/rt@0.0.2": "jsr:@fartlabs/rt@0.0.2",
+      "jsr:@fartlabs/rt@^0.0.2": "jsr:@fartlabs/rt@0.0.2",
       "jsr:@luca/esbuild-deno-loader@^0.10.3": "jsr:@luca/esbuild-deno-loader@0.10.3",
       "jsr:@std/assert@^0.213.1": "jsr:@std/assert@0.213.1",
       "jsr:@std/assert@^0.224.0": "jsr:@std/assert@0.224.0",
@@ -11,10 +14,12 @@
       "jsr:@std/encoding@0.213": "jsr:@std/encoding@0.213.1",
       "jsr:@std/json@^0.213.1": "jsr:@std/json@0.213.1",
       "jsr:@std/jsonc@0.213": "jsr:@std/jsonc@0.213.1",
-      "jsr:@std/path": "jsr:@std/path@0.224.0",
       "jsr:@std/path@0.213": "jsr:@std/path@0.213.1",
+      "jsr:@std/path@0.224.0": "jsr:@std/path@0.224.0",
       "jsr:@std/path@0.225.0": "jsr:@std/path@0.225.0",
+      "jsr:@std/path@^0.224.0": "jsr:@std/path@0.224.0",
       "jsr:@teemukurki/rate-limiter": "jsr:@teemukurki/rate-limiter@0.0.3",
+      "jsr:@teemukurki/rate-limiter@^0.0.3": "jsr:@teemukurki/rate-limiter@0.0.3",
       "npm:@types/node": "npm:@types/node@18.16.19",
       "npm:acorn-loose@^8.4.0": "npm:acorn-loose@8.4.0",
       "npm:esbuild@0.20.2": "npm:esbuild@0.20.2",
@@ -25,9 +30,31 @@
       "npm:react@18.2.0": "npm:react@18.2.0",
       "npm:react@19.0.0-beta-b498834eab-20240506": "npm:react@19.0.0-beta-b498834eab-20240506",
       "npm:rsc-html-stream": "npm:rsc-html-stream@0.0.3",
+      "npm:rsc-html-stream@^0.0.3": "npm:rsc-html-stream@0.0.3",
+      "npm:types-react-dom@alpha": "npm:types-react-dom@19.0.0-alpha.5",
       "npm:types-react@alpha": "npm:types-react@19.0.0-alpha.5"
     },
     "jsr": {
+      "@bureaudouble-forks/esbuild-deno-loader@0.10.3+pr0.0.4": {
+        "integrity": "b4e6ee566f745c6b1ebe7b606535954b2c66b5ff440ca96ed58aa19e4b988fd8",
+        "dependencies": [
+          "jsr:@std/encoding@0.213",
+          "jsr:@std/jsonc@0.213",
+          "jsr:@std/path@0.213"
+        ]
+      },
+      "@bureaudouble/rsc-engine@0.0.13": {
+        "integrity": "4af36d348e97e762ecb4ad4b639fcd70964f586f15ea4dae130a14c7b3322228",
+        "dependencies": [
+          "jsr:@bureaudouble-forks/esbuild-deno-loader@0.10.3+nestarz.quiet.0.0.3",
+          "jsr:@std/path@0.213",
+          "jsr:@std/path@0.224.0",
+          "jsr:@teemukurki/rate-limiter@^0.0.3",
+          "npm:react-dom@19.0.0-beta-b498834eab-20240506",
+          "npm:react@19.0.0-beta-b498834eab-20240506",
+          "npm:types-react@alpha"
+        ]
+      },
       "@bureaudouble/scripted@0.0.2": {
         "integrity": "6ba53621ed24438e28f9949301f39eb0241e8746433b1465479b91c29475b58b"
       },
@@ -183,6 +210,17 @@
         "integrity": "sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA==",
         "dependencies": {}
       },
+      "@types/prop-types@15.7.12": {
+        "integrity": "sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==",
+        "dependencies": {}
+      },
+      "@types/react@18.3.1": {
+        "integrity": "sha512-V0kuGBX3+prX+DQ/7r2qsv1NsdfnCLnTgnRJ1pYnxykBhGMz+qj+box5lq7XsO5mtZsBqpjwwTu/7wszPfMBcw==",
+        "dependencies": {
+          "@types/prop-types": "@types/prop-types@15.7.12",
+          "csstype": "csstype@3.1.3"
+        }
+      },
       "acorn-loose@8.4.0": {
         "integrity": "sha512-M0EUka6rb+QC4l9Z3T0nJEzNOO7JcoJlYMrBlyBCiFSXRyxjLKayd4TbQs2FDRWQU1h9FR7QVNHt+PEaoNL5rQ==",
         "dependencies": {
@@ -288,6 +326,12 @@
         "integrity": "sha512-fw52C9FJ90xSu8R2vRfYX8WiI3sz4zo/ya98DRdRqkkgek6WYofI7AJRM5ZZxFtVKuJZOUjV+4uoVK9Al1XadA==",
         "dependencies": {}
       },
+      "types-react-dom@19.0.0-alpha.5": {
+        "integrity": "sha512-dE5cM6pWYwTYd8AMTWBD5moRYzEqxySg96SKDxzajx5cHmeeC/Q5r1KjtIMlFs9IBIa8tEsJRfLh2UYF2NiIdw==",
+        "dependencies": {
+          "@types/react": "@types/react@18.3.1"
+        }
+      },
       "types-react@19.0.0-alpha.5": {
         "integrity": "sha512-xZD+lxZWLeTPRAfYIC2CYO+cbkrVg1Jismo7gGC6kzEjYk+ixz0E8rXJ371Dbqo2eHjmJYjwszV+eOa3DiHqUg==",
         "dependencies": {
@@ -299,9 +343,14 @@
   "remote": {},
   "workspace": {
     "dependencies": [
+      "jsr:@bureaudouble/rsc-engine@0.0.13",
+      "jsr:@fartlabs/rt@^0.0.2",
+      "jsr:@std/path@^0.224.0",
+      "jsr:@teemukurki/rate-limiter@^0.0.3",
       "npm:acorn-loose@^8.4.0",
       "npm:react-dom@19.0.0-beta-b498834eab-20240506",
       "npm:react@19.0.0-beta-b498834eab-20240506",
+      "npm:rsc-html-stream@^0.0.3",
       "npm:types-react-dom@alpha",
       "npm:types-react@alpha"
     ]

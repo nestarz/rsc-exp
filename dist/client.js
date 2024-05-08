@@ -26807,7 +26807,7 @@ var require_client = __commonJS({
   }
 });
 
-// islet-rsc/vendor/react-server-dom-esm/react-server-dom-esm-client.browser.development.js
+// https://jsr.io/@bureaudouble/rsc-engine/0.0.13/vendor/react-server-dom-esm/react-server-dom-esm-client.browser.development.js
 var ReactDOM = __toESM(require_react_dom());
 var React = __toESM(require_react());
 var enableBinaryFlight = false;

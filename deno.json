@@ -7,20 +7,26 @@
       "deno.ns"
     ],
     "jsx": "react-jsx",
-    "jsxImportSource": "islet/react",
+    "jsxImportSource": "@bureaudouble/rsc-engine",
     "jsxImportSourceTypes": "@types/react"
   },
   "imports": {
-    "islet/react/jsx-runtime": "./islet-rsc/jsxRuntime.ts",
+    "@bureaudouble/rsc-engine": "jsr:@bureaudouble/rsc-engine@0.0.13",
+    "@bureaudouble/rsc-engine/": "jsr:/@bureaudouble/rsc-engine@0.0.13/",
+    "@fartlabs/rt": "jsr:@fartlabs/rt@^0.0.2",
+    "@std/path/": "jsr:/@std/path@^0.224.0/",
+    "@teemukurki/rate-limiter": "jsr:@teemukurki/rate-limiter@^0.0.3",
     "@types/react": "npm:types-react@alpha",
     "@types/react-dom": "npm:types-react-dom@alpha",
     "acorn-loose": "npm:acorn-loose@^8.4.0",
     "react": "npm:react@19.0.0-beta-b498834eab-20240506",
     "react-dom": "npm:react-dom@19.0.0-beta-b498834eab-20240506",
     "react-dom/": "npm:/react-dom@19.0.0-beta-b498834eab-20240506/",
+    "react-server-dom-esm/client.browser": "jsr:@bureaudouble/rsc-engine@0.0.13/react-server-dom-esm/client.browser",
+    "react-server-dom-esm/node-loader": "jsr:@bureaudouble/rsc-engine@0.0.13/react-server-dom-esm/node-loader",
+    "react-server-dom-esm/server.edge": "jsr:@bureaudouble/rsc-engine@0.0.13/react-server-dom-esm/server.edge",
+    "react-server-dom-esm/server.node": "jsr:@bureaudouble/rsc-engine@0.0.13/react-server-dom-esm/server.node",
     "react/": "npm:/react@19.0.0-beta-b498834eab-20240506/",
-    "react-server-dom-esm/node-loader": "./islet-rsc/vendor/react-server-dom-esm/react-server-dom-esm-node-loader.production.js",
-    "react-server-dom-esm/server.node": "./islet-rsc/vendor/react-server-dom-esm/cjs/react-server-dom-esm-server.node.development.js",
-    "react-server-dom-esm/client.browser": "./islet-rsc/vendor/react-server-dom-esm/react-server-dom-esm-client.browser.development.js"
+    "rsc-html-stream": "npm:rsc-html-stream@^0.0.3"
   }
 }
