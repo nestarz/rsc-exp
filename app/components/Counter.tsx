@@ -2,7 +2,7 @@
 
 import { createElement, useState } from "react";
 
-export const Counter_ = () => {
+export const Counter = () => {
   const [counter, setCounter] = useState(0);
 
   return (
@@ -11,10 +11,3 @@ export const Counter_ = () => {
     </button>
   );
 };
-
-export const Counter = () =>
-  createElement({
-    $$typeof: Symbol.for("react.client.reference"),
-    $$id: import.meta.url.concat("#Counter_").slice(7),
-    $$async: false,
-  });

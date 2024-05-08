@@ -7,10 +7,11 @@
       "deno.ns"
     ],
     "jsx": "react-jsx",
-    "jsxImportSource": "react",
+    "jsxImportSource": "islet/react",
     "jsxImportSourceTypes": "@types/react"
   },
   "imports": {
+    "islet/react/jsx-runtime": "./react/jsx-runtime.ts",
     "@types/react": "npm:types-react@alpha",
     "@types/react-dom": "npm:types-react-dom@alpha",
     "acorn-loose": "npm:acorn-loose@^8.4.0",
