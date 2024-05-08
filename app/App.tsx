@@ -1,8 +1,9 @@
-import { Suspense } from "react";
+// @deno-types="@types/react"
+import { Suspense, createElement } from "react";
+import { fromFileUrl } from "@std/path/posix/from-file-url";
+
 import { Counter } from "./components/Counter.tsx";
 import { Counter2 } from "./components/Counter2.tsx";
-import { createElement } from "react";
-import { fromFileUrl } from "jsr:@std/path@0.225.0/posix/from-file-url";
 
 async function delay(ms: number) {
   return await new Promise((resolve) => setTimeout(resolve, ms));
