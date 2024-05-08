@@ -1,9 +1,12 @@
 // @deno-types="@types/react/jsx-runtime"
 import * as JSX from "react/jsx-runtime";
 import { fromFileUrl } from "jsr:@std/path@0.225.0/posix/from-file-url";
-import entrypoints from "../entrypoints.json" with { type: "json" };
 import { join } from "jsr:@std/path@0.225.0/join";
 import { toFileUrl } from "jsr:@std/path@0.225.0/to-file-url";
+
+const entrypoints = await import("../entrypoints.json", {
+  assert: { type: "json" },
+}).then((v) => v.default ?? []).catch(() => []);
 
 let modules: any[];
 setTimeout(async () => {

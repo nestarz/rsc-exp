@@ -26807,7 +26807,7 @@ var require_client = __commonJS({
   }
 });
 
-// react-server-dom-esm/react-server-dom-esm-client.browser.development.js
+// islet-rsc/vendor/react-server-dom-esm/react-server-dom-esm-client.browser.development.js
 var ReactDOM = __toESM(require_react_dom());
 var React = __toESM(require_react());
 var enableBinaryFlight = false;
@@ -27833,7 +27833,7 @@ function createFromReadableStream(stream, options) {
   return getRoot(response);
 }
 
-// client.tsx
+// app/client.tsx
 var import_react = __toESM(require_react());
 var import_client2 = __toESM(require_client());
 
@@ -27868,7 +27868,7 @@ if (typeof document !== "undefined" && document.readyState === "loading") {
   streamController?.close();
 }
 
-// client.tsx
+// app/client.tsx
 var import_jsx_runtime = __toESM(require_jsx_runtime());
 var data;
 var Content = ({ stream }) => {
